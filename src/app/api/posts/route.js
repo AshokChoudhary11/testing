@@ -7,7 +7,17 @@ import path from "path";
 import fs from "fs";
 import { Blob } from "buffer";
 
-const ROOT_PATH = path.resolve(process.cwd() + "/public/uploads");
+let CURRENT_PATH = process.cwd();
+if (process.env.NODE_ENV === "production") {
+  CURRENT_PATH = "/tmp";
+}
+const ROOT_PATH = path.resolve(CURRENT_PATH + "/public/uploads");
+
+const checkAndMakeDir = async (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+};
 
 export async function GET(req) {
   try {
@@ -53,9 +63,7 @@ export async function POST(req) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    if (!fs.existsSync(ROOT_PATH)) {
-      fs.mkdirSync(ROOT_PATH);
-    }
+    checkAndMakeDir(ROOT_PATH);
     fs.writeFileSync(path.resolve(ROOT_PATH, body.file.name), buffer);
 
     const imagePath = `/uploads/${body.file.name}`; // Construct the image path
@@ -110,9 +118,7 @@ export async function PUT(req) {
       // Delete the old image if a new one is uploaded
       if (post.image) {
         const buffer = Buffer.from(await file.arrayBuffer());
-        if (!fs.existsSync(ROOT_PATH)) {
-          fs.mkdirSync(ROOT_PATH);
-        }
+        checkAndMakeDir(ROOT_PATH);
         fs.writeFileSync(path.resolve(ROOT_PATH, body.file.name), buffer);
 
         const imagePath = `/uploads/${body.file.name}`; // Construct the image path
