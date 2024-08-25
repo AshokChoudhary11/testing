@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import "./BlogForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FileText, HardDrive, Save } from "react-feather";
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
