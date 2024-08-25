@@ -1,0 +1,39 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(to top , blue, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .createpost {
+    font-size: 12px;
+    font-weight: normal;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #0070f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .createpost svg{
+    width: 16px;
+    height: 16px;
+  }

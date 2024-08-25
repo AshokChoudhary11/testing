@@ -1,0 +1,48 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0.5rem 0;
+    margin: auto;
+    flex-grow: 1;
+  }
+  
+  @media (min-width: 1200px) {
+    .post {
+      flex: 1 1 calc(25% - 50px); 
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .post {
+      flex: 1 1 calc(50% - 50px); 
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .post {
+      flex: 1 1 100%;
+    }
+  }
+  
+
+
+  .no-blogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+  }
+
+  .no-blogs h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .no-blog-image{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }

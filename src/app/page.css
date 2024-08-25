@@ -1,0 +1,41 @@
+ .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .searchForm {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .searchInput {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    width: 250px;
+  }
+  
+  .searchButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .searchButton svg{
+    width: 16px;
+    height: 16px;
+  }
+  
+  
+  
