@@ -1,4 +1,4 @@
-// src/app/search/page.jsx
+"use client";
 import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";
 
